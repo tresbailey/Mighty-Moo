@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folders>
+	<folder>
+		<id>testPage</id>
+		<name>../../images/2010/Parade/</name>
+		<displayName>2010 Parade</displayName>
+		<samples>
+		<sample>Summer 2010 018_t.jpg</sample>
+		<sample>Summer 2010 019_t.jpg</sample>
+		<sample>Summer 2010 020_t.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>golfTourn</id>
+		<name>../../images/2010/GolfTourn/</name>
+		<displayName>2010 Golf Tournament</displayName>
+		<samples>
+		<sample>2010tourn1_t.jpg</sample>
+		<sample>2010tourn2_t.jpg</sample>
+		<sample>2010tourn2_t.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>committee</id>
+		<name>../../images/2010/Committee/</name>
+		<displayName>2010 Committee</displayName>
+		<samples>
+		<sample>DSC_0116_t.jpg</sample>
+		<sample>DSC_0119_t.jpg</sample>
+		<sample>DSC_0124_t.jpg</sample>
+		</samples>
+	</folder>
+	<!--
+	<folder>
+		<id>gospelSing</id>
+		<name>../../images/gospelSing/</name>
+		<displayName>Gospel Singing</displayName>
+		<samples>
+		<sample>MIGHTY MOO 2007 004.jpg</sample>
+		<sample>MIGHTY MOO 2007 005.jpg</sample>
+		<sample>MIGHTY MOO 2007 024.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>entertainment</id>
+		<name>../../images/entertainment/</name>
+		<displayName>Street Dance</displayName>
+		<samples>
+		<sample>entertain6.jpg</sample>
+		<sample>entertain9.jpg</sample>
+		<sample>entertain4.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>golf07</id>
+		<name>../../images/golf07/</name>
+		<displayName>Golf 2007</displayName>
+		<samples>
+		<sample>MIGHTY MOO 2007 054.jpg</sample>
+		<sample>MIGHTY MOO 2007 058.jpg</sample>
+		<sample>MIGHTY MOO 2007 080.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>crewDinner07</id>
+		<name>../../images/crewDinner07/</name>
+		<displayName>Crew Dinner 2007</displayName>
+		<samples>
+		<sample>MIGHTY MOO 2007 095.jpg</sample>
+		<sample>MIGHTY MOO 2007 097.jpg</sample>
+		<sample>MIGHTY MOO 2007 099.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>kidPar07</id>
+		<name>../../images/kidPar07/</name>
+		<displayName>Kids Parade 2007</displayName>
+		<samples>
+		<sample>MIGHTY MOO 2007 113.jpg</sample>
+		<sample>MIGHTY MOO 2007 114.jpg</sample>
+		<sample>MIGHTY MOO 2007 123.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>drive07</id>
+		<name>../../images/drivein07/</name>
+		<displayName>Drive In 2007</displayName>
+		<samples>
+		<sample>DCP_0735.jpg</sample>
+		<sample>DCP_0736.jpg</sample>
+		<sample>DCP_0737.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>fireworks07</id>
+		<name>../../images/fireworks07/</name>
+		<displayName>Fireworks 2007</displayName>
+		<samples>
+		<sample>fireworks3.jpg</sample>
+		<sample>fireworks4.jpg</sample>
+		<sample>fireworks5.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>pard07</id>
+		<name>../../images/parade07/</name>
+		<displayName>Parade 2007</displayName>
+		<samples>
+		<sample>parade4.jpg</sample>
+		<sample>parade5.jpg</sample>
+		<sample>parade6.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>street07</id>
+		<name>../../images/street07/</name>
+		<displayName>Street Dance 2007</displayName>
+		<samples>
+		<sample>dragPic3.jpg</sample>
+		<sample>dragPic2.jpg</sample>
+		<sample>dragPic.jpg</sample>
+		</samples>
+	</folder>
+	<folder>
+		<id>pageant07</id>
+		<name>../../images/pageant07/</name>
+		<displayName>Mighty Moo Pageant 2007</displayName>
+		<samples>
+		<sample>dragPic3.jpg</sample>
+		<sample>dragPic2.jpg</sample>
+		<sample>dragPic.jpg</sample>
+		</samples>
+	</folder>
+	-->
+</folders>

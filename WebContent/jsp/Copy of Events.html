@@ -1,0 +1,273 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link type="text/css" href="../css/mootheme/jquery-ui-1.7.2.custom.css" rel="Stylesheet" />	
+<link type="text/css" href="../css/MightyMoo.css" rel="Stylesheet" />	
+<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.7.1.custom.min.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.core.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.tabs.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.draggable.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.dialog.js"></script>
+
+
+
+	<script type="text/javascript">
+
+	function loadEventPage( index ) {
+		$(".event_tabs").removeClass("selected_Tab");
+		$(".event_tabs").eq(index).addClass("selected_Tab");	
+		$.ajax({
+			url: "../content/Events.xml?time="+ new Date(),
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				var evDt;
+				var time;
+				var NDX = 0;
+				var dayNDX = 0;
+				while($(".eventListItem").size() > 1) { 
+					$(".eventListItem:last-child").remove();
+				}
+				$(xml).find("day").each(function() {
+					if(dayNDX == index) {
+					evDt = $(this).attr("date");
+					$("#dateShow").text(evDt);
+					$(".thumbImg").attr("src",$(this).find("pic").text());
+					$(this).find("time").each(function() {
+							var cloneItem = $(".eventListItem").eq(0).clone();
+							NDX++;
+							time = $(this).attr("date");
+							$(cloneItem).find(".title-text-black").html(time);
+							var nd2=0;
+							$(this).find("event").each( function() {
+								var cloneTime = $(cloneItem).find(".eventTimeList li").html($(this).text());
+								//var cloneLI = $(".eventListItem").eq(0).clone();
+								//$(cloneLI).find(".text-grey").html($(this).text());
+								//$(cloneLI).appendTo(".eventListItem");
+							});
+							$(cloneItem).appendTo(".eventList");
+							$(cloneItem).show();
+					});
+					$(".eventListItem").eq(0).hide();
+					} else {
+					}
+					dayNDX++;
+				});
+				$(".eventListItem li:odd").addClass("rowOddItem");
+			},
+			error: function() {
+				alert(2);
+			}
+		});
+	}
+
+var imgNDX = 1;
+var imgXML;
+	$(document).ready( function() {
+
+		$(".roundBox").wrap("<div class='boxT'><div class='boxB'><div class='boxL'><div class='boxR'><div class='boxBL'><div class='boxBR'><div class='boxTL'><div class='boxTR'></div></div></div></div></div></div></div></div>");
+
+		loadEventPage(0);
+
+		$(".nav_tab").click( function() {
+			window.location = $(".nav_tab a").attr("href");
+		});
+
+		$("#smallAgendas .smallAgendaList").hide();
+
+		$(".calDay").hover( function() {
+			hovItem = $(".calDay").index($(this));
+			$("#smallAgendas .smallAgendaList").eq(hovItem).slideDown();
+			$("#smallAgendas .smallAgendaList").eq(hovItem).css('marginLeft',hovItem*90);
+		}, function() {
+			$("#smallAgendas .smallAgendaList").eq(hovItem).slideUp();
+		});
+					
+	});
+	</script>
+
+
+</head>
+<body>
+	<div class="pageHeader" style="margin-top: -15px; margin-left: -10px;">
+	
+		<div style="width: 625px; height: 150px; background: transparent url(../images/header.jpg) top left; filter: alpha(opacity = 100, style = 1, finishOpacity = 0, startx = 0, starty = 0, finishx = 100, finishy = 100)">
+		</div>
+		
+		<div style="font-size: 28pt; font-weight: bold; color: #E0162B; margin-top: -130px; margin-left: 10px;" >
+		The Mighty
+		</div>
+		<div style="font-size: 28pt; font-weight: bold; color: #E0162B; margin-left: 40px;" >
+		Moo Festival
+		</div>
+	
+		<div class="menu_box">
+		   <div class="menu_top"><div></div></div>
+		      <div class="menu_content">
+				<ul style="list-style: none; padding: 0px; margin: 0px; width: 100%;">
+					<li style="display: inline; float: left; "><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./index.html">HOME</a></div></li>
+					<li style="display: inline; float: left; "><div class="title-text nav_tab selected_Tab"><a href="#">EVENTS</a></div></li>
+					<li style="display: inline; float: left;"><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./Pictures.html">PICS</a></div></li>
+					<li style="display: inline; float: left;"><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./USSCowpens.html">SHIPS</a></div></li>
+				</ul>
+		      </div>
+		   <div class="menu_bottom"><div></div></div>
+		</div>
+	</div>
+	
+	<div class="sectionHeader">
+		<span class="sectionHeaderTxt">
+		2010 Events Calendar
+		</span>
+	</div>
+	
+	<div style="width: 1000px; margin-top: 25px;">
+		<div class="content_box">
+		   <div class="menu_top"><div></div></div>
+		      <div class="menu_content" style="">
+				<ul style="display: none; list-style: none; padding: 0px; margin: 0px; width: 100%;">
+					<li style="display: inline; float: left; width: 30%"><div class="title-text event_tabs" style="width: 100%" onclick="(loadEventPage(0))" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="#">Thursday June 10</a></div></li>
+					<li style="display: inline; float: left; width: 30%"><div class="title-text event_tabs" style="width: 100%" onclick="(loadEventPage(1))" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="javascript: function() {return false;}">Friday June 11</a></div></li>
+					<li style="display: inline; float: left; width: 30%"><div class="title-text event_tabs" style="width: 100%" onclick="(loadEventPage(2))" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="javascript: function() {return false;}">Saturday June 12</a></div></li>
+				</ul>
+			</div>
+		</div>
+		<div class="contentSection">
+		<div style="width: 361px; float: left; padding: 0px; margin: 0px;">
+		<div class="calDay" onclick="(loadEventPage(0))" onmouseover="this.style.cursor='hand'">
+		<span style="font-weight: bold; font-size: 15pt; color: #e6e6e6">
+		June
+		</span>
+		<span style="font-weight: bold; font-size: 52pt; color: #e6e6e6">
+		9
+		</span>
+		</div>
+		<div class="calDay" onclick="(loadEventPage(1))" onmouseover="this.style.cursor='hand'">
+		<span style="font-weight: bold; font-size: 15pt; color: #e6e6e6">
+		June
+		</span>
+		<span style="font-weight: bold; font-size: 52pt; color: #e6e6e6">
+		10
+		</span>
+		</div>
+		<div class="calDay" onclick="(loadEventPage(2))" onmouseover="this.style.cursor='hand'">
+		<span style="font-weight: bold; font-size: 15pt; color: #e6e6e6; filter: Shadow(Color=#666666,Direction=135,Strength=5);">
+		June
+		</span>
+		<span style="font-weight: bold; font-size: 52pt; color: #e6e6e6">
+		11	
+		</span>
+		</div>
+		<div class="calDay" onclick="(loadEventPage(3))" onmouseover="this.style.cursor='hand'">
+		<span style="font-weight: bold; font-size: 15pt; color: #e6e6e6">
+		June
+		</span>
+		<span style="font-weight: bold; font-size: 52pt; color: #e6e6e6">
+		12
+		</span>
+		</div>
+		<div id="smallAgendas" style="clear: both">
+		<div class="smallAgendaList">
+		<ul class="eventList" style="margin: 0px">
+				<li class="eventListItemSmall" style="margin: 0px">
+					<div class="title-text-black" style="margin: 0px">9:30 AM
+					</div>
+						<ul class="eventTimeList" style="margin: 0px">
+							<li style="margin: 0px">
+								<div class="text-grey" style="margin: 0px">
+								Lorem ipsum 
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="smallAgendaList">
+		<ul class="eventList" style="margin: 0px">
+				<li class="eventListItemSmall" style="margin: 0px">
+					<div class="title-text-black" style="margin: 0px">0:30 AM
+					</div>
+						<ul class="eventTimeList" style="margin: 0px">
+							<li style="margin: 0px">
+								<div class="text-grey" style="margin: 0px">
+								Lorem ipsum 
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="smallAgendaList">
+		<ul class="eventList" style="margin: 0px">
+				<li class="eventListItemSmall" style="margin: 0px">
+					<div class="title-text-black" style="margin: 0px">0:30 AM
+					</div>
+						<ul class="eventTimeList" style="margin: 0px">
+							<li style="margin: 0px">
+								<div class="text-grey" style="margin: 0px">
+								Lorem ipsum 
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="smallAgendaList">
+		<ul class="eventList" style="margin: 0px">
+				<li class="eventListItemSmall" style="margin: 0px">
+					<div class="title-text-black" style="margin: 0px">0:30 AM
+					</div>
+						<ul class="eventTimeList" style="margin: 0px">
+							<li style="margin: 0px">
+								<div class="text-grey" style="margin: 0px">
+								Lorem ipsum 
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		<div class="contentText" style="width: 600px; background-color: #ffffff; border: 4px solid #0052a5; margin-top: 0px">
+			<span id="dateShow" class="title-text-black">Jan 1, 2010</span>
+			<img src="../images/thumbs/dragPic.jpg" alt="Finley Bucket" class="thumbImg" style="float: right;" />
+			<ul class="eventList">
+				<li class="eventListItem">
+					<div class="title-text-black">0:30 AM
+					</div>
+						<ul class="eventTimeList">
+							<li>
+								<div class="text-grey">
+								Lorem 
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+		   
+		   
+	<div style="width: 100%; text-align: middle; ">
+		<div style="margin-top: 30px; width: 100%; border-top: 1px solid #E0162B; text-align: center">
+			<ul style="">
+				<li style="display: inline">
+			<span><a href="#" style="color: #0054a5; font-weight: bold">Registration Forms</a></span>
+			</li>
+				<li style="display: inline">
+			<span><a href="#" style="color: #0054a5; font-weight: bold">Contact Us</a></span>
+			</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>

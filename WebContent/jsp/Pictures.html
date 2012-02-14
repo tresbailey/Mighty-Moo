@@ -1,0 +1,330 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cowpens' Mighty Moo Festival</title>
+<link type="text/css" href="../css/MightyMoo.css" rel="Stylesheet" />	
+<link rel="stylesheet" href="../js/jquery.bxSlider/bx_styles/bx_styles.css" type="text/css" />
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+
+<script type="text/javascript" src="../js/jquery.infinitecarousel2.js"></script>
+<script type="text/javascript" src="../js/jquery.ae.image.resize.js"></script>
+<script src="../js/jquery.bxSlider.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jQuery/ui/effects.core.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/effects.pulsate.js"></script>
+<script src="../js/Loader.js" type="text/javascript"></script>
+
+
+<style type="text/css">
+
+</style>
+
+	<script type="text/javascript">
+
+
+
+	function gcd(num1, num2) {
+		var floor = Math.floor(num1 / num2);
+		var result = num1 - (num2 * floor);
+		if(result == 0 ) {
+			return num2;
+		} else {
+			return gcd(num2, result);
+		}
+	}
+
+	var selectedFldr;
+	var slider;
+	function loadShownImages() {
+		showLoading();
+		$.ajax({
+			url: selectedFldr+"dragDir.xml?time="+ new Date(),
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				var ind = 1;
+				
+				var clon = $('#slider1').clone();
+				$('bx-wrapper').remove();
+				
+//				$('#slider1').parentsUntil('picWin').unwrap();
+
+				
+				$(xml).find("pic").each(function() {
+					var srcTxt = jQuery("source",this).text();
+					var capTxt = jQuery("caption",this).text();
+													
+					$('#slider1').append('<li><img id="big'+ind+'" alt="" src="'+ selectedFldr +''+ srcTxt +'" width="400px" height="400px"/><span class="text-grey" style="width: 300px; vertical-align: top; padding-top: 20px; padding-left: 15px;">'+ capTxt +'</span></li>');
+/*
+					var newImg = $("#big"+ind);
+					newImg.src = selectedFldr +''+ srcTxt;
+					var height = newImg.height;
+					var width = newImg.width;
+					p = $(newImg).ready(function(){
+					return {width: newImg.width, height: newImg.height}; });
+
+					var divisor = gcd(newImg.width,newImg.height);
+					var nW = Math.floor(width / divisor);
+					var nH = Math.floor(height / divisor);
+
+					ind++;
+					*/
+				});
+				
+				if(slider) {
+					//slider.destroyShow();
+				}
+
+			   slider = $('#slider1').bxSlider({ 
+				    auto: true
+			    });
+				setTimeout(startPage,5000);
+			}
+
+
+
+		});
+		
+	}
+
+		
+var imgNDX = 1;
+var imgXML;
+var picScrollr;
+
+
+	$(document).ready( function() {
+		showLoading();
+
+		var folderCnt = 0;
+		$.ajax({
+			url: "../content/ImageFolders.xml?time="+ new Date(),
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				folderXML = xml;
+				$(xml).find("folder").each(function() {
+					if(folderCnt < 8) {
+						var folder = $(this).find("name").eq(0).text()
+						if(folderCnt == 0) {
+							selectedFldr = $(this).find("name").eq(0).text();
+//							selectedFldr = '../images/thumbs/2009/';
+							loadShownImages();
+						}
+						var sample = $(this).find("sample").eq(0).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg1' src='"+folder+ sample +"' alt='' />");
+						sample = $(this).find("sample").eq(1).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg2' src='"+folder+ sample +"' alt='' />");
+						sample = $(this).find("sample").eq(2).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg3' src='"+folder+ sample +"' alt='' />");
+						$(".folderContainer").eq(folderCnt).attr("id",$(this).find("id").eq(0).text());
+						$("table tr td").eq(folderCnt).append("<div class='title-text-black' style='text-align: center'>"+ $(this).find("displayName").eq(0).text() +"</div>");
+					} 
+					folderCnt++;
+				});
+
+				$(".folderContainer").hover(function() {
+					$(this).css("cursor", "hand");
+				});
+				
+				$(".folderContainer").click(function() {
+					$('#slider1').clone().appendTo("#picWin");
+					$('.bx-wrapper').remove();
+					var selectedID = $(this).attr("id");
+					var idCnt = 0;
+					$(folderXML).find("id").each(function() {
+						if(selectedID == $(this).text()) {
+							selectedFldr = $(folderXML).find("name").eq(idCnt).text();
+							var index = 0;
+							$(".tPic").each(function() {
+								if(index >0) 
+									$(this).remove();
+								index++;
+							});
+							loadShownImages();
+						}
+						idCnt++;
+					});
+				});
+			}
+		});
+		
+
+		$(".roundBox").wrap("<div class='boxT'><div class='boxB'><div class='boxL'><div class='boxR'><div class='boxBL'><div class='boxBR'><div class='boxTL'><div class='boxTR'></div></div></div></div></div></div></div></div>");
+
+		$(".nav_tab").click( function() {
+			window.location = $(".nav_tab a").attr("href");
+		})
+		;
+					
+	});
+
+
+		
+	</script>
+
+
+</head>
+<body>
+<div class="pageHeader" style="margin-top: -20px; margin-left: 0px;">
+
+<div style="width: 650px">
+   <div class="menu_top" style="height: 0px;"><div></div></div>
+      <div class="menu_content" style="padding-top: -5px; margin-top: 0px; margin-left: 0px; margin-bottom: -3px;">
+		<div class="cowHeader">
+		<div class="hdrTypoGr1" >
+		Cowpens,&nbsp;<span class="hdrTypoGr2">SC</span>
+		</div>
+		<div class="hdrTypoGr3" >
+		The Mighty Moo Festival
+		</div>
+		</div>
+      </div>
+   <div class="menu_bottom"><div></div></div>
+   </div>
+
+
+
+
+<div class="menu_box">
+   <div class="menu_top"><div></div></div>
+      <div class="menu_content">
+<ul style="list-style: none; padding: 0px; margin: 0px; width: 100%;">
+	<li style="display: inline; float: left; "><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./index.html">HOME</a></div></li>
+	<li style="display: inline; float: left; "><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./Events.html">EVENTS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text nav_tab selected_Tab" ><a href="#">PICS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./USSCowpens.html">SHIPS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text" onmouseover="$(this).addClass('hover_Tab');" onmouseout="$(this).removeClass('hover_Tab');"><a href="./Crew.html">CREW</a></div></li>
+</ul>
+      </div>
+   <div class="menu_bottom"><div></div></div>
+</div>
+
+</div>
+<div class="sectionHeader">
+	<span class="sectionHeaderTxt">
+		Event Pictures
+	</span>
+</div>
+
+<div style="width: 1000px; margin-top: 25px;">
+	<div class="content_box">
+	   <div class="menu_top"><div></div></div>
+	      <div class="menu_content">
+			<div class="content-title">Mighty Moo Pictures</div>
+		</div>
+	</div>
+<div class="contentSection" style="">
+
+
+
+
+<div id="picWin"
+	style="width: 875px; margin: 0px; margin-left: 54px; overflow-x: hidden; float: left; padding: 15px">
+
+<div style="border: #000 1px solid; width: 100%">
+<ul id="slider1" style="width: 785px; margin-left: 75px;">
+</ul>
+
+
+</div>
+</div>
+
+<div id="slider-range-min" style="display: none; width: 619px; position: relative; left: 90px"></div>
+
+<div id="div1" style="clear: both; background-color: white; width: 875px; margin: 0px; margin-top: 30px; margin-left: 54px; overflow-x: hidden; float: left; padding: 15px">
+				<span class="text-grey" >
+				Click on an image group below to view all the images for the group.
+				</span>
+<table style="width: 100%">
+<tr>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+</tr>
+<tr>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+
+<div class="footer">
+<div class="footerContent">
+<ul style="">
+	<li style="display: inline"><span><a target="blank" href="../content/2010_Mighty_Moo_Brochure.pdf"
+		class="footerLink">2010 Brochure</a></span></li>
+	<li style="display: inline"><span><a href="forms.html"
+		class="footerLink">Registration Forms</a></span></li>
+	<li style="display: inline"><span><a href="ContactUs.html"
+		class="footerLink">Contact Us</a></span></li>
+</ul>
+</div>
+</div>
+<div class="opaqueOverlay">	
+</div>
+<div class="dialogBox">
+
+
+<div class="loaderSpace">
+  <div class="loader load1"></div>
+  <div class="loader load2"  ></div>
+  <div class="loader load3"  ></div>
+  <div class="loader load4"></div>
+</div>
+<div class="loaderSpace">
+  <div class="loader load1"></div>
+  <div class="loader load2"  ></div>
+  <div class="loader load3"  ></div>
+  <div class="loader load4"></div>
+</div>
+<div class="loaderSpace">
+  <div class="loader load1"></div>
+  <div class="loader load2"  ></div>
+  <div class="loader load3"  ></div>
+  <div class="loader load4"></div>
+</div>
+<div class="loaderSpace">
+  <div class="loader load1"></div>
+  <div class="loader load2"  ></div>
+  <div class="loader load3"  ></div>
+  <div class="loader load4"></div>
+</div>
+
+</div>
+</body>
+</html>

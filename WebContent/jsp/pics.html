@@ -1,0 +1,388 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cowpens' Mighty Moo Festival</title>
+<link type="text/css" href="../css/mootheme/jquery-ui-1.7.2.custom.css" rel="Stylesheet" />	
+<link type="text/css" href="../css/MightyMoo.css" rel="Stylesheet" />	
+<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.7.1.custom.min.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.core.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.tabs.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.draggable.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.dialog.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/ui.slider.js"></script>
+<script type="text/javascript" src="../js/jQuery/ui/effects.core.js"></script>
+
+
+	<script type="text/javascript">
+	var imgCounter = { first: 1,
+			second: 2,
+			third: 3,
+			last: 4,
+			total: 0,
+			current: 0
+};
+
+	function autoScroll() {
+
+		clearTimeout(picScrollr);
+		++imgCounter.current;
+		if(imgCounter.current < (imgCounter.total-2)) { 
+		moveTo(imgCounter.current);
+		$("#slider-range-min").slider('value',imgCounter.current);
+		} else { 
+			imgCounter.current = 0;
+			moveTo(imgCounter.current);
+			$("#slider-range-min").slider('value',imgCounter.current);
+		}
+	
+		
+		picScrollr = setTimeout(autoScroll,5000);
+	}
+	
+	function viewLargeImg($link) {
+		var src = $link.attr('src');
+		var title = $link.attr('alt');
+		var $modal = $('img[src$="'+src+'"]');
+		var img = $('<img alt="'+title+'" style="display:none;padding: 8px;height: 250px; width: 250px; " />')
+			.attr('src',src).appendTo('body');
+		setTimeout(function() {
+			img.dialog({
+				title: title,
+				width: 500,
+				height: 500,
+				modal: true
+			});
+		}, 1);
+	}
+
+	function moveTo(value) {
+		var src = $(imgXML).find("source").eq(value).text();
+		var caption = $(imgXML).find("caption").eq(value).text();
+		$(".tPic1").find(".baseImg").attr("alt",caption);
+		$(".tPic1").find(".baseImg").attr("src",selectedFldr+src);
+		src = $(imgXML).find("source").eq(value+1).text();
+		caption = $(imgXML).find("caption").eq(value+1).text();
+		if(src != "" && src != null) {
+			$(".tPic2").find(".baseImg").attr("src",selectedFldr+src);
+			$(".tPic2").find(".baseImg").attr("alt",caption);
+			src = $(imgXML).find("source").eq(value+2).text();
+			caption = $(imgXML).find("caption").eq(value+2).text();
+			if(src != "" && src != null) {
+				$(".tPic3").find(".baseImg").attr("src",selectedFldr+src);
+				$(".tPic3").find(".baseImg").attr("alt",caption);
+				src = $(imgXML).find("source").eq(value+3).text();
+				caption = $(imgXML).find("caption").eq(value+3).text();
+				if(src != "" && src != null) {
+					$(".tPic4").find(".baseImg").attr("src",selectedFldr+src);
+					$(".tPic4").find(".baseImg").attr("alt",caption);
+					$(".tPic4").show();
+					$(".tPic5").find(".baseImg").attr("src",selectedFldr+src);
+					$(".tPic5").find(".baseImg").attr("alt",caption);
+					src = $(imgXML).find("source").eq(value+4).text();
+					caption = $(imgXML).find("caption").eq(value+4).text();
+					$(".tPic5").hide();
+					$(".tPic6").find(".baseImg").attr("src",selectedFldr+src);
+					$(".tPic6").find(".baseImg").attr("alt",caption);
+					src = $(imgXML).find("source").eq(value+5).text();
+					caption = $(imgXML).find("caption").eq(value+5).text();
+					$(".tPic6").hide();
+					$(".tPic7").find(".baseImg").attr("src",selectedFldr+src);
+					$(".tPic7").find(".baseImg").attr("alt",caption);
+					src = $(imgXML).find("source").eq(value+6).text();
+					caption = $(imgXML).find("caption").eq(value+6).text();
+					$(".tPic7").hide();
+				} else {
+					$(".tPic4").hide();
+				}
+			} 
+		}
+	}
+
+	var selectedFldr;
+	function loadShownImages() {
+		$.ajax({
+			url: selectedFldr+"dragDir.xml?time="+ new Date(),
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				$(xml).find("source").each(function() {
+					if(imgCounter.total <= 6) {
+					imgCounter.total++;
+					var cloned = $(".tPic").eq(0).clone();
+					$(cloned).find(".baseImg").attr("src",selectedFldr+$(this).text());
+					$(cloned).addClass("tPic"+imgCounter.total);
+					$(cloned).addClass("picHldr"+imgCounter.total);
+					$(cloned).appendTo("#picWin");
+
+					if(imgCounter.total > 4) {
+						$(".tPic"+imgCounter.total).hide();
+						return;
+					}
+					
+					} else {
+						imgCounter.total++;
+
+					}
+					//alert($(".tPic"+imgCounter.total).html());
+				});
+
+				$(".tPic").eq(0).remove();
+
+				$(".tPic img").hover( function() {
+					clearTimeout(picScrollr);
+					$(this).parent().parent().parent().parent().parent().eq(0).addClass("hvrPic");
+					$(this).addClass("hvrPicImg");
+					$(this).parent().parent().parent().parent().parent().eq(0).removeClass("tPic");
+				}, function() {
+					picScrollr = setTimeout(autoScroll,5000);
+					$(this).parent().parent().parent().parent().parent().eq(0).removeClass("hvrPic");
+					$(this).removeClass("hvrPicImg");
+					$(this).parent().parent().parent().parent().parent().eq(0).addClass("tPic");
+				});
+				$(".baseImg").click( function(ev) {
+					var $target = $(ev.target);
+					viewLargeImg($target);
+				});
+										
+				$(xml).find("caption").each(function() {
+					if(imgNDX <= 4) {
+						var cpTxt = $(this).text();
+						var cap = $(cpTxt).wrap("<div class='captionText'></div>");
+					$(".tPic"+imgNDX).contents().filter(".tCap"+imgNDX).html("<div class='captionText'>"+$(this).text()+"</div>");
+					imgNDX++;
+					} else {
+						return;
+					}
+				});
+				imgXML = xml;
+				$("#slider-range-min").slider({
+					value: 0,
+					min: 0,
+					max: imgCounter.total - 2,
+					step: 1,
+					stop: function(event, ui) {
+					moveTo(ui.value);
+					},
+					slide: function(event,ui) {
+						return false;
+					}
+				});					
+
+				picScrollr = setTimeout(autoScroll,5000);
+			}
+
+
+		});
+	}
+	
+var imgNDX = 1;
+var imgXML;
+var picScrollr;
+
+	$(document).ready( function() {
+		
+		var folderCnt = 0;
+		$.ajax({
+			url: "../content/ImageFolders.xml?time="+ new Date(),
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				folderXML = xml;
+				$(xml).find("folder").each(function() {
+					if(folderCnt < 8) {
+						var folder = $(this).find("name").eq(0).text()
+						if(folderCnt == 0) {
+							selectedFldr = $(this).find("name").eq(0).text();
+							loadShownImages();
+						}
+						var sample = $(this).find("sample").eq(0).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg1' src='"+folder+ sample +"' alt='' />");
+						sample = $(this).find("sample").eq(1).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg2' src='"+folder+ sample +"' alt='' />");
+						sample = $(this).find("sample").eq(2).text();
+						$(".folderContainer").eq(folderCnt).append("<img class='folderImg3' src='"+folder+ sample +"' alt='' />");
+						$(".folderContainer").eq(folderCnt).attr("id",$(this).find("id").eq(0).text());
+						$("table tr td").eq(folderCnt).append("<div class='title-text-black' style='text-align: center'>"+ $(this).find("displayName").eq(0).text() +"</div>");
+					} 
+					folderCnt++;
+				});
+
+				$(".folderContainer").hover(function() {
+					$(this).css("cursor", "hand");
+				});
+				
+				$(".folderContainer").click(function() {
+					var selectedID = $(this).attr("id");
+					var idCnt = 0;
+					$(folderXML).find("id").each(function() {
+						if(selectedID == $(this).text()) {
+							selectedFldr = $(folderXML).find("name").eq(idCnt).text();
+							var index = 0;
+							$(".tPic").each(function() {
+								if(index >0) 
+									$(this).remove();
+								index++;
+							});
+							imgCounter.total = 0;
+							imgCounter.current = 0;
+							loadShownImages();
+						}
+						idCnt++;
+					});
+				});
+			}
+		});
+		
+
+		$(".roundBox").wrap("<div class='boxT'><div class='boxB'><div class='boxL'><div class='boxR'><div class='boxBL'><div class='boxBR'><div class='boxTL'><div class='boxTR'></div></div></div></div></div></div></div></div>");
+
+		//var selectedFldr = "../../images/";
+		//loadShownImages(selectedFldr);
+
+		$(".nav_tab").click( function() {
+			window.location = $(".nav_tab a").attr("href");
+		});
+					
+	});
+	</script>
+
+
+</head>
+<body>
+<div class="pageHeader" style="margin-top: -20px; margin-left: 0px;">
+
+<div style="width: 650px">
+   <div class="menu_top" style="height: 0px;"><div></div></div>
+      <div class="menu_content" style="padding-top: -5px; margin-top: 0px; margin-left: 0px; margin-bottom: -3px;">
+		<div class="cowHeader">
+		<div class="hdrTypoGr1" >
+		Cowpens,&nbsp;<span class="hdrTypoGr2">SC</span>
+		</div>
+		<div class="hdrTypoGr3" >
+		The Mighty Moo Festival
+		</div>
+		</div>
+      </div>
+   <div class="menu_bottom"><div></div></div>
+   </div>
+
+
+
+
+<div class="menu_box">
+   <div class="menu_top"><div></div></div>
+      <div class="menu_content">
+<ul style="list-style: none; padding: 0px; margin: 0px; width: 100%;">
+	<li style="display: inline; float: left; "><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./index.html">HOME</a></div></li>
+	<li style="display: inline; float: left; "><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./Events.html">EVENTS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text nav_tab selected_Tab" ><a href="#">PICS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text nav_tab" onmouseover="$(this).addClass('hover_Tab')" onmouseout="$(this).removeClass('hover_Tab')"><a href="./USSCowpens.html">SHIPS</a></div></li>
+	<li style="display: inline; float: left;"><div class="title-text" onmouseover="$(this).addClass('hover_Tab');" onmouseout="$(this).removeClass('hover_Tab');"><a href="./Crew.html">CREW</a></div></li>
+</ul>
+      </div>
+   <div class="menu_bottom"><div></div></div>
+</div>
+
+</div>
+<div class="sectionHeader">
+	<span class="sectionHeaderTxt">
+		Event Pictures
+	</span>
+</div>
+
+<div style="width: 1000px; margin-top: 25px;">
+	<div class="content_box">
+	   <div class="menu_top"><div></div></div>
+	      <div class="menu_content">
+			<div class="content-title">Mighty Moo Pictures</div>
+		</div>
+	</div>
+<div class="contentSection" style="">
+<div id="picWin" style="width: 875px; margin: 0px; margin-left: 54px; overflow-x: hidden; float: left; padding: 15px">
+				<span class="text-grey" >
+				Click on an image below to view a larger version of the image.
+				</span>
+<div class="tPic" style="">
+<div class="wideBox" style="clear: both">
+<div class="borderTop"><b></b></div>
+<div class="borderLeft">
+<div class="borderRight">
+<div class="borderMiddle">
+<img class="baseImg"
+	src="../images/moo_logo.gif" alt="Mighty Moo"/></div>
+</div>
+</div>
+<div class="borderBottom"><b></b></div>
+</div>
+</div>
+</div>
+
+<div id="slider-range-min" style="display: none; width: 619px; position: relative; left: 90px"></div>
+
+<div id="div1" style="clear: both; background-color: white; width: 875px; margin: 0px; margin-top: 30px; margin-left: 54px; overflow-x: hidden; float: left; padding: 15px">
+				<span class="text-grey" >
+				Click on an image group below to view all the images for the group.
+				</span>
+<table style="width: 100%">
+<tr>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+</tr>
+<tr>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+<td style="width: 25%">
+<div class="folderContainer">
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+
+<div class="footer">
+<div class="footerContent">
+<ul style="">
+	<li style="display: inline"><span><a target="blank" href="../content/2010_Mighty_Moo_Brochure.pdf"
+		class="footerLink">2010 Brochure</a></span></li>
+	<li style="display: inline"><span><a href="forms.html"
+		class="footerLink">Registration Forms</a></span></li>
+	<li style="display: inline"><span><a href="ContactUs.html"
+		class="footerLink">Contact Us</a></span></li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

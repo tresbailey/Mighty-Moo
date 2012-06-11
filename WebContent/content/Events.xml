@@ -92,7 +92,7 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Baseball Game &lt;br /&gt;
+						<name>Baseball Game
 						Moo Crew vs. Cowpens Little League Team - Red Moore Field
 						</name> 	
 					</event>
@@ -197,7 +197,7 @@
 						</mapInfo>
 						<name>
 						&lt;table&gt;
-						&lt;tr&gt;&lt;td width="50%"&gt;Hash Sale by Midway BBQ & Hash&lt;/td&gt;&lt;td width="50%"&gt;Arts and Crafts&lt;/td&gt;&lt;tr&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Hash Sale by Midway BBQ and Hash&lt;/td&gt;&lt;td width="50%"&gt;Arts and Crafts&lt;/td&gt;&lt;tr&gt;
 						&lt;tr&gt;&lt;td width="50%"&gt;Food Concessions&lt;/td&gt;&lt;td width="50%"&gt;Games&lt;/td&gt;&lt;tr&gt;
 						&lt;tr&gt;&lt;td width="50%"&gt;Amusement Rides&lt;/td&gt;&lt;td width="50%"&gt;Entertainment&lt;/td&gt;&lt;tr&gt;
 						&lt;/table&gt;
@@ -233,7 +233,7 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Children’s Parade - Assemble at Greenway Drive and end at Rite Aid.&lt;br /&gt;
+						<name>Childrens Parade - Assemble at Greenway Drive and end at Rite Aid.&lt;br /&gt;
 						Children up to age 12 may participate by riding strollers, big wheels, tricycles, wagons, and bikes.&lt;br /&gt;
 						ATTENTION PARENTS: Please be at Rite Aid to pick up your child immediately after this event!</name> 
 					</event>
@@ -383,27 +383,4 @@
 			</time>
 		</times>
 	</day>
-	<!--
-	<day date="Sunday, June 19, 2011">
-		<pic>
-			../images/moo_logo.gif
-		</pic>
-		<times>
-			<time date="">
-				<events>
-					<event>
-						 	
-					</event>
-				</events>				
-			</time>
-			<time date="">
-				<events>
-					<event>
-					
-					</event>
-				</events>				
-			</time>
-		</times>
-	</day>
-	-->
 </days>

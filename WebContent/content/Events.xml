@@ -1,3 +1,409 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <days>
+	<day date="Wednesday, June 13, 2012">
+		<pic>
+			../images/moo_logo.gif
+		</pic>
+		<times>
+			<time date="6:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.017485</lat>
+								<lng>-81.8051</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Community Gospel Singing</name>	
+					</event>
+				</events>				
+			</time>
+		</times>
+	</day>
+	<day date="Thursday, June 14, 2012">
+		<pic>
+			../images/moo_logo.gif
+		</pic>
+		<times>
+			<time date="5:00 - 11:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.014717</lat>
+								<lng>-81.802606</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Carnival Rides at the Depot - Wrist Band Night ($15)</name>
+					</event>
+				</events>				
+			</time>
+			<time date="5:00 - 11:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.014717</lat>
+								<lng>-81.802606</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Food Vendors Open</name>
+					</event>
+				</events>				
+			</time>
+			<time date="7:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.026315</lat>
+								<lng>-81.817235</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+					<name>Miss Cowpens Beauty Pageant - Cowpens Elementary School, Foster Street.&lt;br /&gt;
+							Open to walking toddlers through 18 years old.&lt;br /&gt;
+							Call Pam Camp at 864.580.9766 for information</name>	
+					</event>
+				</events>				
+			</time>
+		</times>
+	</day>
+	<day date="Friday, June 15, 2012">
+		<pic>
+			../images/moo_logo.gif
+		</pic>
+		<times>
+			<time date="9:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.009717</lat>
+								<lng>-81.801474</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Baseball Game &lt;br /&gt;
+						Moo Crew vs. Cowpens Little League Team - Red Moore Field
+						</name> 	
+					</event>
+				</events>				
+			</time>
+			<time date="9:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Golf Tournament at Woodfinn Ridge Golf Club &lt;br /&gt;
+						Registration begins at 8:00 AM, shotgun start at 9:00 AM&lt;br /&gt;
+						$70.00 Entry Fee, lunch will be provided.&lt;br /&gt;
+						All proceeds benefit the Mighty Moo Scholarship fund for Broome High School.&lt;br /&gt;
+						For more information contact Travis Linder at 864.706.1165&lt;br /&gt;</name> 	
+					</event>
+				</events>				
+			</time>
+			<time date="10:00 AM - 2:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Cowpens Historical Depot and Museum Open</name>
+					</event>
+				</events>				
+			</time>
+			<time date="2:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.016993</lat>
+								<lng>-81.803899</lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Cake / Pie Contest - Entries due at Town Hall</name>
+					</event>
+				</events>				
+			</time>
+			<time date="5:00 - 11:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Carnival Rides at the Depot</name>
+					</event>
+				</events>				
+			</time>
+			<time date="8:00 PM - 11:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Street Dance located at Event Stage.  Featuring "The Long Road Home" Band</name>
+					</event>
+				</events>				
+			</time>
+		</times>
+	</day>
+	<day date="Saturday, June 16, 2012">
+		<pic>
+			../images/moo_logo.gif
+		</pic>
+		<times>
+			<time date="All Day">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>
+						&lt;table&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Hash Sale by Midway BBQ & Hash&lt;/td&gt;&lt;td width="50%"&gt;Arts and Crafts&lt;/td&gt;&lt;tr&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Food Concessions&lt;/td&gt;&lt;td width="50%"&gt;Games&lt;/td&gt;&lt;tr&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Amusement Rides&lt;/td&gt;&lt;td width="50%"&gt;Entertainment&lt;/td&gt;&lt;tr&gt;
+						&lt;/table&gt;
+						</name>	
+					</event>
+				</events>				
+			</time>
+			<time date="7:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>
+						Mighty Moo Backyard BBQ and Cook-Off registration and setup
+						</name> 
+					</event>
+				</events>				
+			</time>
+			<time date="9:30 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Children’s Parade - Assemble at Greenway Drive and end at Rite Aid.&lt;br /&gt;
+						Children up to age 12 may participate by riding strollers, big wheels, tricycles, wagons, and bikes.&lt;br /&gt;
+						ATTENTION PARENTS: Please be at Rite Aid to pick up your child immediately after this event!</name> 
+					</event>
+				</events>				
+			</time>
+			<time date="10:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat>35.007415</lat>
+								<lng>-81.812954</lng>
+							</startLocation>
+							<endLocation>
+								<lat>35.021351</lat>
+								<lng>-81.800916</lng>
+							</endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Mighty Moo Parade -  call Laura Taylor at 864.621.9348 or 864.463.3201</name>
+					</event>
+				</events>				
+			</time>
+			<time date="10:00 AM - 2:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation>
+								<lat></lat>
+								<lng></lng>
+							</endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Cowpens Library Anniversary Celebration</name>
+					</event>
+				</events>				
+			</time>
+			<time date="10:00 AM - 3:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation>
+								<lat></lat>
+								<lng></lng>
+							</endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Piedmont Area Blood Bank - Blood Mobile located at the left side of the stage</name>
+					</event>
+				</events>				
+			</time>
+			<time date="11:45 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>
+						<u>Opening Ceremonies</u> - Main Stage at Veteran's Park&lt;br /&gt;
+						Master of Ceremonies - Jamarcus Gaston with SCENE on 7
+						&lt;ul&gt;
+						&lt;li&gt;Welcome by Mayor Hamrick&lt;/li&gt;
+						&lt;li&gt;National Anthem&lt;/li&gt;
+						&lt;li&gt;Veteran's Walk of Honor and Rememberance
+						*Veterans from all branches of service are invited to participate in our WALK OF HONOR.  Please gather at the event stage immediately after the parade.
+						&lt;/li&gt;
+						&lt;li&gt;Special Introductions - Dignitaries and Candidates&lt;/li&gt;
+						&lt;li&gt;Presentation of Miss Cowpens Pageant Winners&lt;/li&gt;
+						&lt;li&gt;Presentation of Golf Scholarship Winners&lt;/li&gt;
+						&lt;/ul&gt;
+						</name>
+					</event>
+				</events>				
+			</time>
+			<time date="11:00 AM - 12:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Carnival Rides at the Depot</name> 	
+					</event>
+				</events>				
+			</time>
+			<time date="2:00 PM - 4:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Cowpens High School Reunion - All former graduates are invited to attend at Cowpens Elementary School on Foster Street</name>
+					</event>
+				</events>				
+			</time>
+			<time date="8:00 PM - 12:00 AM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Street Dance - Entertainment by the East Coast Party Band.  </name>
+					</event>
+				</events>				
+			</time>
+			<time date="9:30 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Fireworks Display</name>
+					</event>
+				</events>				
+			</time>
+		</times>
+	</day>
+	<!--
+	<day date="Sunday, June 19, 2011">
+		<pic>
+			../images/moo_logo.gif
+		</pic>
+		<times>
+			<time date="">
+				<events>
+					<event>
+						 	
+					</event>
+				</events>				
+			</time>
+			<time date="">
+				<events>
+					<event>
+					
+					</event>
+				</events>				
+			</time>
+		</times>
+	</day>
+	-->
 </days>

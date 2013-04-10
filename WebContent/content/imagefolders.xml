@@ -20,6 +20,7 @@
 		<sample>2010tourn2_t.jpg</sample>
 		</samples>
 	</folder>
+	<!--
 	<folder>
 		<id>committee</id>
 		<name>../../images/2010/Committee/</name>
@@ -30,7 +31,6 @@
 		<sample>DSC_0124_t.jpg</sample>
 		</samples>
 	</folder>
-	<!--
 	<folder>
 		<id>gospelSing</id>
 		<name>../../images/gospelSing/</name>

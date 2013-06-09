@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <days>
-	<day date="Wednesday, June 13, 2012">
+	<day date="Wednesday, June 12, 2013">
 		<pic>
 			../images/moo_logo.gif
 		</pic>
 		<times>
-			<time date="6:00 PM">
+			<time date="6:30 PM">
 				<events>
 					<event>
 						<mapInfo>
@@ -22,7 +22,7 @@
 			</time>
 		</times>
 	</day>
-	<day date="Thursday, June 14, 2012">
+	<day date="Thursday, June 13, 2013">
 		<pic>
 			../images/moo_logo.gif
 		</pic>
@@ -76,7 +76,7 @@
 			</time>
 		</times>
 	</day>
-	<day date="Friday, June 15, 2012">
+	<day date="Friday, June 14, 2013">
 		<pic>
 			../images/moo_logo.gif
 		</pic>
@@ -93,7 +93,7 @@
 							<mapImage></mapImage>
 						</mapInfo>
 						<name>Baseball Game
-						Moo Crew vs. Cowpens Little League Team - Red Moore Field
+						Moo Crew vs. District 3 Youth Sports - Red Moore Field
 						</name> 	
 					</event>
 				</events>				
@@ -112,6 +112,8 @@
 						<name>Golf Tournament at Woodfinn Ridge Golf Club &lt;br /&gt;
 						Registration begins at 8:00 AM, shotgun start at 9:00 AM&lt;br /&gt;
 						$70.00 Entry Fee, lunch will be provided.&lt;br /&gt;
+						$15.00 Red Tees and Mulligans.&lt;br /&gt;
+						Lunch will be provided.&lt;br /&gt;
 						All proceeds benefit the Mighty Moo Scholarship fund for Broome High School.&lt;br /&gt;
 						For more information contact Travis Linder at 864.706.1165&lt;br /&gt;</name> 	
 					</event>
@@ -147,6 +149,21 @@
 					</event>
 				</events>				
 			</time>
+			<time date="5:00 - 9:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>BBQ Cook-Off Wing "Sampling" $1.00 ticket</name>
+					</event>
+				</events>				
+			</time>
 			<time date="5:00 - 11:00 PM">
 				<events>
 					<event>
@@ -173,13 +190,13 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Street Dance located at Event Stage.  Featuring "The Long Road Home" Band</name>
+						<name>Street Dance.  Featuring Brandon Harris and The Good Ol Boys</name>
 					</event>
 				</events>				
 			</time>
 		</times>
 	</day>
-	<day date="Saturday, June 16, 2012">
+	<day date="Saturday, June 15, 2013">
 		<pic>
 			../images/moo_logo.gif
 		</pic>
@@ -197,15 +214,15 @@
 						</mapInfo>
 						<name>
 						&lt;table&gt;
-						&lt;tr&gt;&lt;td width="50%"&gt;Hash Sale by Midway BBQ and Hash&lt;/td&gt;&lt;td width="50%"&gt;Arts and Crafts&lt;/td&gt;&lt;tr&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Entertainment&lt;/td&gt;&lt;td width="50%"&gt;Arts and Crafts&lt;/td&gt;&lt;tr&gt;
 						&lt;tr&gt;&lt;td width="50%"&gt;Food Concessions&lt;/td&gt;&lt;td width="50%"&gt;Games&lt;/td&gt;&lt;tr&gt;
-						&lt;tr&gt;&lt;td width="50%"&gt;Amusement Rides&lt;/td&gt;&lt;td width="50%"&gt;Entertainment&lt;/td&gt;&lt;tr&gt;
+						&lt;tr&gt;&lt;td width="50%"&gt;Amusement Rides&lt;/td&gt;&lt;td width="50%"&gt;&lt;/td&gt;&lt;tr&gt;
 						&lt;/table&gt;
 						</name>	
 					</event>
 				</events>				
 			</time>
-			<time date="7:00 AM">
+			<time date="8:00 AM - 3:00 PM">
 				<events>
 					<event>
 						<mapInfo>
@@ -216,8 +233,8 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>
-						Mighty Moo Backyard BBQ and Cook-Off registration and setup
+                        <name>
+                            Arts & Crafts - Located at Main Shopping District on Main Street
 						</name> 
 					</event>
 				</events>				
@@ -253,7 +270,7 @@
 							</endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Mighty Moo Parade -  call Laura Taylor at 864.621.9348 or 864.463.3201</name>
+						<name>Mighty Moo Parade -  call Teresa Chadwick at 864.463.3201</name>
 					</event>
 				</events>				
 			</time>
@@ -306,16 +323,17 @@
 						</mapInfo>
 						<name>
 						<u>Opening Ceremonies</u> - Main Stage at Veteran's Park&lt;br /&gt;
-						Master of Ceremonies - Jamarcus Gaston with SCENE on 7
+						Master of Ceremonies - Aimee Smith
 						&lt;ul&gt;
 						&lt;li&gt;Welcome by Mayor Hamrick&lt;/li&gt;
-						&lt;li&gt;National Anthem&lt;/li&gt;
+						&lt;li&gt;National Anthem - Mary Kate Cantrell&lt;/li&gt;
 						&lt;li&gt;Veteran's Walk of Honor and Rememberance
 						*Veterans from all branches of service are invited to participate in our WALK OF HONOR.  Please gather at the event stage immediately after the parade.
 						&lt;/li&gt;
 						&lt;li&gt;Special Introductions - Dignitaries and Candidates&lt;/li&gt;
 						&lt;li&gt;Presentation of Miss Cowpens Pageant Winners&lt;/li&gt;
 						&lt;li&gt;Presentation of Golf Scholarship Winners&lt;/li&gt;
+                        &lt;li&gt;Presentation of Cake/Pie Contest Sponsored by Abbott Farms Bakery&lt;/li&gt;
 						&lt;/ul&gt;
 						</name>
 					</event>
@@ -336,7 +354,7 @@
 					</event>
 				</events>				
 			</time>
-			<time date="2:00 PM - 4:00 PM">
+			<time date="1:00 PM - 4:00 PM">
 				<events>
 					<event>
 						<mapInfo>
@@ -347,7 +365,37 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Cowpens High School Reunion - All former graduates are invited to attend at Cowpens Elementary School on Foster Street</name>
+						<name>BBQ Pork Cook-off Sampling $2.00 Tickets</name>
+					</event>
+				</events>				
+			</time>
+			<time date="3:00 PM - 5:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>Entertainment by Crossland</name>
+					</event>
+				</events>				
+			</time>
+			<time date="4:00 PM">
+				<events>
+					<event>
+						<mapInfo>
+							<startLocation>
+								<lat></lat>
+								<lng></lng>
+							</startLocation>
+							<endLocation></endLocation>
+							<mapImage></mapImage>
+						</mapInfo>
+						<name>BBQ Cook-Off Awards</name>
 					</event>
 				</events>				
 			</time>
@@ -362,7 +410,7 @@
 							<endLocation></endLocation>
 							<mapImage></mapImage>
 						</mapInfo>
-						<name>Street Dance - Entertainment by the East Coast Party Band.  </name>
+						<name>Street Dance - Entertainment by the Grand Strand.  </name>
 					</event>
 				</events>				
 			</time>
